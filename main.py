@@ -2,11 +2,12 @@ import time
 
 space = "                             "
 wait = time.sleep(1)
+playerHealth = 10
+Inventory = []
 
 def gameSetup():
     
-    playerHealth = 10
-    playerInventory = []
+
 
     print("=============")
     print("CASTLE ESCAPE")
@@ -34,7 +35,7 @@ def gameSetup():
 
 def dungeonRoom():
     ActionOne = ""
-    while True:  # infinite loop until we break manually
+    while True:  # infinite loop until break manually
         ActionOne = input("Would you like to look around for now Y/N? ")
         if ActionOne.upper() == "Y":
             print("You spot the heavy dungeon lock securing the door.")
@@ -47,4 +48,15 @@ def dungeonRoom():
         else:
             print("Please enter Y or N")
 
+    ActionTwo = ""
+    while True:
+        ActionTwo = input("Do you want to pick up a loose rock, Y/N? ")
+        if ActionTwo.upper() == "Y":
+            Inventory.append("Rock")
+            print("You pick up the rock — maybe it can help break the lock.")
+            break
+        elif ActionTwo.upper == "N":
+            print("You leave the rock on the floor for now.")
 
+
+dungeonRoom()
