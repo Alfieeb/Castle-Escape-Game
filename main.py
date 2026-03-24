@@ -10,13 +10,11 @@ Inventory = []
 
 def gameSetup():
     
-
-
     print("=============")
     print("CASTLE ESCAPE")
     print("=============")
     print(space)
-    wait
+    wait()
 
     playerName = input("Enter your player's name. ")
     print(f"Welcome to castle escape {playerName}!")
@@ -74,6 +72,16 @@ def dungeonRoom():
             break
         else:
             print("Please enter Y or N")
+    ActionThree = ""
+    while True:
+        ActionThree = input("Do you want to try breaking the lock, Y/N?")
+        print(space)
+        wait()
 
+        if ActionThree.upper() == "Y":
+            if Inventory == ["Rock"]:
+                print("Success, you have broken the lock!")
+            elif Inventory == []:
+                print("Fail, Game over.")
 
 dungeonRoom()
